@@ -1,0 +1,16 @@
+<h1>일기 목록</h1>
+
+<div>
+    {% if post.pub_date %}
+        <div>
+            {{post.pub_date}}
+        </div>
+    {%endif%}
+    <h1>{{post.title}}</h1>
+    <p>{{post.body|linebreaks}}</p>
+    <p>날씨 : {{post.weather}}</p>
+    <p>오늘의 기분 (1~100) : {{post.rate}}</p>
+</div>
+
+<a href="{% url 'edit' index=post.pk%}">edit</a><br>
+<a href="{% url 'delete' pk=post.pk%}">del</a>

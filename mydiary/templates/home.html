@@ -1,0 +1,11 @@
+<h1>Hyojin's Diary</h1>
+
+<a href="{% url 'new' %}">작성하기</a><br><br><br>
+
+{% for post in posts_list %}
+    <!-- <h3>{{post.title}}</h3> -->
+    <a href="{% url 'detail' index=post.pk %}">{{post.title}}</a><br>
+    <!-- <p>날씨 : {{post.weather}}</p>
+    <p>오늘의 기분 (1~100) : {{post.rate}}</p> -->
+    <hr>
+{% endfor %}
